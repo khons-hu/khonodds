@@ -7,7 +7,7 @@ let noticeRenderer=null;
 let state=normalize({version:1}),tab='discover',board=[],request=0,events=[],lastSeen={},polling=false,detailRequest=0;
 try{const saved=localStorage.getItem(key);if(saved)state=normalize(JSON.parse(saved))}catch{notice(()=>t('Saved data could not be loaded. Import a backup if you have one.'))}
 function notice(value){noticeRenderer=typeof value==='function'?value:()=>refreshText(value);$('#notice').textContent=noticeRenderer()}function save(){try{localStorage.setItem(key,JSON.stringify(state));$('#watchCount').textContent=number(state.wallets.length)}catch{notice(()=>t('Browser storage is unavailable or full. Export your research before closing.'))}}
-function theme(){document.body.classList.toggle('dark',state.theme==='dark')}theme();save();
+function theme(){document.documentElement.classList.toggle('dark',state.theme==='dark')}theme();save();
 $('#theme').onclick=()=>{state.theme=state.theme==='dark'?'light':'dark';theme();save()};
 async function api(kind,params={}){const r=await fetch('/api/data?'+new URLSearchParams({kind,...params}),{signal:AbortSignal.timeout(15000)});let d;try{d=await r.json()}catch{throw Error(t('The data service is unavailable. Retry shortly.'))}if(!r.ok)throw Error(d.error||t('Data request failed'));return d}
 const fail=err=>e(err.name==='TimeoutError'?t('Request timed out. Please retry.'):errorText(err));
