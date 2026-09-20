@@ -1,4 +1,4 @@
-# Market Watch
+# Khonodds
 
 [Open app ↗](https://market-watch-khonsu.vercel.app/)
 
@@ -39,3 +39,7 @@ Requests have 10-second upstream and 15-second client timeouts, reject redirects
 Leaderboard PnL is reported by Polymarket, not independently verified realized profit. Closed realized PnL is the sum of up to 100 returned closed positions, not lifetime gains. Concentration uses only loaded current position value. None of these metrics establishes trader quality, risk-adjusted performance, or an investment recommendation.
 
 Production smoke checks on 2026-09-20 returned live leaderboard, current positions, closed positions and activity data through the deployed API. The wallet watch add/remove flow, alert preference saving and 390px mobile layout were checked in the browser. Actual future trade delivery is not guaranteed by these checks.
+
+## License
+
+Original project code is available under the [MIT License](LICENSE), copyright © 2026 Patrick Obrtal. Third-party components retain their own licenses.
