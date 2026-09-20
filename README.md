@@ -49,3 +49,7 @@ Original project code is available under the [MIT License](LICENSE), copyright �
 [Download the signed APK](https://github.com/khons-hu/khonodds/releases/tag/android-v1.0.0-preview.1) · [Build instructions](android/README.md) · [Verification](android/VERIFICATION.md)
 
 Android 8.0+ with a current TWA-capable browser (Chrome recommended). This small package opens the live web app. First load and server data require internet. Build, lint and signature checks pass, but installation and flows on an Android device have not yet been verified. No Google Play release or additional background notification service.
+
+The interface supports English, Slovak, Hungarian, Polish, German, Spanish and Czech. The native language selector saves its choice in this browser, otherwise the app uses the first supported browser language and falls back to English. Language changes preserve research data and in-progress form values. Dates, numbers and USD values follow the selected locale. Public wallet names, addresses, market content and personal notes remain unchanged.
+
+Translations live in `public/messages.js`. `public/i18n.js` translates explicitly marked static labels and authored template segments before inserting source values. It does not translate arbitrary page content or call an external translation service. API and validation errors are mapped locally, with a localized fallback for unknown errors. Existing visible-page monitoring and manual IPO verification limits apply in every language.
