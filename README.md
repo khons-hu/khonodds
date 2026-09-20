@@ -1,5 +1,7 @@
 # Market Watch
 
+[Open app ↗](https://market-watch-khonsu.vercel.app/)
+
 Independent, read-only Polymarket research desk. Vanilla JavaScript, zero runtime packages, Node 20+. No wallet connection, transactions, account, paid API or model calls.
 
 ## Run and deploy
@@ -36,4 +38,4 @@ Requests have 10-second upstream and 15-second client timeouts, reject redirects
 
 Leaderboard PnL is reported by Polymarket, not independently verified realized profit. Closed realized PnL is the sum of up to 100 returned closed positions, not lifetime gains. Concentration uses only loaded current position value. None of these metrics establishes trader quality, risk-adjusted performance, or an investment recommendation.
 
-During initial build the shell could not resolve the Polymarket API host and the web fetch tool could not retrieve its JSON. Unit tests verify contracts, validation and failures with clearly test-only synthetic inputs. Live API and deployed checks must be completed in an environment with network access before claiming verified-live status.
+Production smoke checks on 2026-09-20 returned live leaderboard, current positions, closed positions and activity data through the deployed API. The wallet watch add/remove flow, alert preference saving and 390px mobile layout were checked in the browser. Actual future trade delivery is not guaranteed by these checks.
